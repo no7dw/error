@@ -28,8 +28,10 @@ Checker.prototype.start = function () {
 };
 Checker.prototype.onerror = function (err) {
   console.log('onerror', err);
-  this.emit('error', err);  // 触发 error 事件
+  this.emit('checkerror', err);  // 触发 error 事件
 };
+//not exports = Checker;
+module.exports = Checker;
+// var checker = new Checker('http://www.tmall.com', 'tmall.html');
 
-var checker = new Checker('http://www.tmall.com', 'tmall.html');
                 
